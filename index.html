@@ -46,7 +46,7 @@ if (contra_senha == senha) {
 
 	var iframeDoc = document.getElementById("VID").contentWindow.document;
 	iframeDoc.open();
-	iframeDoc.write("<form name='formulario' action='http://v-id.net/demo/farma/funcoes/registro_embarque.php' method='POST'><INPUT TYPE='text' NAME='fid' id='fid' SIZE='50' readonly='readonly'><INPUT TYPE='text' NAME='fanvisa' id='fanvisa' MAXLENGTH='13' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='fserial' id='fserial' MAXLENGTH='20' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='fvalidade' id='fvalidade' MAXLENGTH='5' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='flote' id='flote' MAXLENGTH='20' SIZE='20' readonly='readonly'><INPUT TYPE='radio' NAME='fnatureza' id='fnatureza' readonly='readonly'><INPUT TYPE='hidden' NAME='conteudo' id='conteudo' readonly='readonly'><input type='hidden' name='dados' id='dados' readonly='readonly'><input type='text' name='registros' id='registros' size='5' readonly='readonly'><INPUT TYPE='text' NAME='campos' id='campos' readonly size='2' readonly='readonly'></frame>");
+	iframeDoc.write("<form name='formulario' action='http://v-id.net/demo/farma/funcoes/registro_qualidade.php' method='POST'><INPUT TYPE='text' NAME='fid' id='fid' SIZE='50' readonly='readonly'><INPUT TYPE='text' NAME='fanvisa' id='fanvisa' MAXLENGTH='13' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='fserial' id='fserial' MAXLENGTH='20' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='fvalidade' id='fvalidade' MAXLENGTH='5' SIZE='20' readonly='readonly'><INPUT TYPE='text' NAME='flote' id='flote' MAXLENGTH='20' SIZE='20' readonly='readonly'><INPUT TYPE='radio' NAME='fnatureza' id='fnatureza' readonly='readonly'><INPUT TYPE='hidden' NAME='conteudo' id='conteudo' readonly='readonly'><input type='hidden' name='dados' id='dados' readonly='readonly'><input type='text' name='registros' id='registros' size='5' readonly='readonly'><INPUT TYPE='text' NAME='campos' id='campos' readonly size='2' readonly='readonly'></frame>");
 	iframeDoc.close();
 
 	parent.VID.formulario.fid.value = document.getElementById("fid").value;
@@ -82,7 +82,7 @@ background-position: 5px 10px;
 } 
 </style> 
 
-<form name="formulario" action="http://v-id.net/demo/farma/funcoes/registro_embarque.php" method="POST">
+<form name="formulario" action="http://v-id.net/demo/farma/funcoes/registro_qualidade.php" method="POST">
 
 <font size="1">
 <div style="position:absolute;left:20px; top:280px ">v-id:<br>
