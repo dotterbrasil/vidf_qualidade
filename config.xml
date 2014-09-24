@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.dotter.virtualid_farma"
         version   = "1.0.0">
-    <name>VIDF - Embarque</name>
+    <name>VIDF - Qualidade</name>
 
     <description>
         VIrtual ID Farma - modulo de qualidade.
