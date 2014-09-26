@@ -42,13 +42,13 @@ if(file_exists($licenca)) {
 
 				$serial = $dados[$x];
 
-				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza"\r\n -----------------------------------------------------------\r\n";
+				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n -----------------------------------------------------------\r\n";
 
 				$endereco = $anvisa."/".$lote."/".$serial;
 
 				$FILE = "../".$endereco.".vid";
 
-				$fp = fopen($FILE, "a+");
+				$fp = fopen($FILE, "w+");
 				if(!fwrite($fp, $conteudo2)) {
 						$endereco = date("d/m/Y - h:i:sa")." - Falha ao gravar registro - ".$endereco."\r\n";
 						$FILE2 = "../alertas/log_de_erros.txt";
