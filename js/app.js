@@ -27,7 +27,7 @@ if (n.indexOf(";")>0) {
 	n = n.substring(n.indexOf("caixa:"),n.length);
 	document.formulario.fvalidade.value = validade;
 
-	identificador = n.substring(14,n.indexOf("seriais:"));
+	identificador = n.substring(6,n.indexOf("seriais:"));
 	n = n.substring(n.indexOf("seriais:"),n.length);
 	document.formulario.fserial.value = identificador;
 
