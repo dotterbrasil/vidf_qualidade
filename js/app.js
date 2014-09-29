@@ -11,6 +11,7 @@ reg_anvisa = "";
 serial = "";
 validade = "";
 lote = "";
+identificador = "";
 
 if (n.indexOf(";")>0) {
 
@@ -18,13 +19,17 @@ if (n.indexOf(";")>0) {
 	n = n.substring(20,n.length);
 	document.formulario.fanvisa.value = reg_anvisa;
 
-	lote = n.substring(5,n.indexOf("seriais:"));
-	n = n.substring(n.indexOf("seriais:"),n.length);
+	lote = n.substring(5,n.indexOf("validade:"));
+	n = n.substring(n.indexOf("validade:"),n.length);
 	document.formulario.flote.value = lote;
 
-	//validade = n.substring(9,14);
-	//n = n.substring(14,n.length);
-	//document.formulario.fvalidade.value = validade;
+	validade = n.substring(9,n.indexOf("caixa:"));
+	n = n.substring(n.indexOf("caixa:"),n.length);
+	document.formulario.fvalidade.value = validade;
+
+	identificador = n.substring(14,n.indexOf("seriais:"));
+	n = n.substring(n.indexOf("seriais:"),n.length);
+	document.formulario.fserial.value = identificador;
 
 	seriais = n.substring(8,n.lenght);
 	document.getElementById("texto").value = seriais;
