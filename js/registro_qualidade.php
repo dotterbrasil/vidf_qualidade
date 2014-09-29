@@ -17,7 +17,7 @@ $contador = $registros*$campos;
 $anvisa = $_POST["fanvisa"];
 $serial = $_POST["fserial"];
 $lote = $_POST["flote"];
-$validade = $_POST["fvalidade"];$validade = str_replace("/","",$validade);
+$validade = $_POST["fvalidade"];//$validade = str_replace("/","",$validade);
 $natureza = $_POST["fnatureza"];
 $id = $_POST["fid"];
 
@@ -42,7 +42,7 @@ if(file_exists($licenca)) {
 
 				$serial = $dados[$x];
 
-				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n -----------------------------------------------------------\r\n";
+				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n Validade: ".$validade."\r\n Identificador: ".$serial."\r\n -----------------------------------------------------------\r\n";
 
 				if(!file_exists("../".$anvisa)) {mkdir("../".$anvisa);}
 
