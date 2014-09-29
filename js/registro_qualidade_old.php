@@ -44,35 +44,21 @@ if(file_exists($licenca)) {
 
 				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n -----------------------------------------------------------\r\n";
 
-				if(!file_exists("../".$anvisa)) {mkdir("../".$anvisa);}
+				$endereco = $anvisa."/".$lote."/".$serial;
 
-				if(!file_exists("../".$anvisa."/".$lote)) {
+				$FILE = "../".$endereco.".vid";
 
-					if($natureza=="quarentena") {
-
-						if(!file_exists("../".$anvisa."/q".$lote)) {mkdir("../".$anvisa."/q".$lote);}
-
-						$endereco = $anvisa."/q".$lote."/".$serial;
-
-						$FILE = "../".$endereco.".vid";
-
-						$fp = fopen($FILE, "w+");
-						if(!fwrite($fp, $conteudo2)) {
-							$endereco = date("d/m/Y - h:i:sa")." - Falha ao gravar registro - ".$endereco."\r\n";
-							$FILE2 = "../alertas/log_de_erros.txt";
-							$fp2 = fopen($FILE2, "a+");
-							fwrite($fp2, $endereco);
-							fclose($fp2);
-							}
-						fclose($fp);
-						echo "<html><script>texto_alerta = 'registrou arquivo'; alert(texto_alerta);</script></html>";
+				$fp = fopen($FILE, "w+");
+				if(!fwrite($fp, $conteudo2)) {
+						$endereco = date("d/m/Y - h:i:sa")." - Falha ao gravar registro - ".$endereco."\r\n";
+						$FILE2 = "../alertas/log_de_erros.txt";
+						$fp2 = fopen($FILE2, "a+");
+						fwrite($fp2, $endereco);
+						fclose($fp2);
 						}
-
-					if($natureza=="liberacao") {
-						rename("../".$anvisa."/q".$lote,"../".$anvisa."/".$lote);
-						exit("Operacao Efetuada!");
-						}
-					}
+				fclose($fp);
+				echo "<html><script>texto_alerta = 'registrou arquivo'; alert(texto_alerta);</script></html>";
+				
 
 				}
 			}
