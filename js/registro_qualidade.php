@@ -15,7 +15,7 @@ $registros = $_POST["registros"];
 $contador = $registros*$campos;
 
 $anvisa = $_POST["fanvisa"];
-$serial = $_POST["fserial"];
+$identificador = $_POST["fserial"];
 $lote = $_POST["flote"];
 $validade = $_POST["fvalidade"];//$validade = str_replace("/","",$validade);
 $natureza = $_POST["fnatureza"];
@@ -42,7 +42,7 @@ if(file_exists($licenca)) {
 
 				$serial = $dados[$x];
 
-				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n Validade: ".$validade."\r\n Identificador: ".$serial."\r\n -----------------------------------------------------------\r\n";
+				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n Validade: ".$validade."\r\n Identificador: ".$identificador."\r\n -----------------------------------------------------------\r\n";
 
 				if(!file_exists("../".$anvisa)) {mkdir("../".$anvisa);}
 
@@ -51,6 +51,20 @@ if(file_exists($licenca)) {
 					if($natureza=="quarentena") {
 
 						if(!file_exists("../".$anvisa."/q".$lote)) {mkdir("../".$anvisa."/q".$lote);}
+
+						$endereco_caixa = $anvisa."/q".$lote."/".$identificador;
+						$FILE_caixa = "../".$endereco_caixa.".box";
+						$lista = $serial.";";
+
+						$fp1 = fopen($FILE_caixa, "a");
+						if(!fwrite($fp1, $lista)) {
+							$endereco_caixa = date("d/m/Y - h:i:sa")." - Falha ao gravar registro - ".$endereco_caixa."\r\n";
+							$FILE2 = "../alertas/log_de_erros.txt";
+							$fp2 = fopen($FILE2, "a+");
+							fwrite($fp2, $endereco_caixa);
+							fclose($fp2);
+							}
+						fclose($fp1);
 
 						$endereco = $anvisa."/q".$lote."/".$serial;
 
