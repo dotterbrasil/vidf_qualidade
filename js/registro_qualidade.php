@@ -42,13 +42,13 @@ if(file_exists($licenca)) {
 
 				$serial = $dados[$x];
 
-				$conteudo2 =  date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Natureza: ".$natureza."\r\n Validade: ".$validade."\r\n Identificador: ".$identificador."\r\n -----------------------------------------------------------\r\n";
+				$conteudo2 =  "Evento: ".str_pad(time(), 12, "0", STR_PAD_LEFT)."\r\n Natureza: ".$natureza."\r\n Data Registro: ".date("d/m/Y - h:i:sa")." - ID: ".$id."\r\n Validade: ".$validade."\r\n Id-Embalagem: ".$identificador."\r\n -----------------------------------------------------------\r\n";
 
 				if(!file_exists("../".$anvisa)) {mkdir("../".$anvisa);}
 
 				if(!file_exists("../".$anvisa."/".$lote)) {
 
-					if($natureza=="quarentena") {
+					if($natureza!="liberacao") {
 
 						if(!file_exists("../".$anvisa."/q".$lote)) {mkdir("../".$anvisa."/q".$lote);}
 
