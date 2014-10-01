@@ -63,5 +63,6 @@ function envio(){
 		parent.VID.formulario.submit();
 		vid = document.formulario.fid.value;
 		document.formulario.reset();
+		document.getElementById("texto").value = "";
 		document.formulario.fid.value = vid;
 }
