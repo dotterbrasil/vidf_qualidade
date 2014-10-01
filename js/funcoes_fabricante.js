@@ -61,5 +61,7 @@ function validaArquivo(){
 function envio(){
 
 		parent.VID.formulario.submit();
-
+		vid = document.formulario.fid.value;
+		reset();
+		document.formulario.fid.value = vid;
 }
