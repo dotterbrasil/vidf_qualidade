@@ -43,8 +43,6 @@ function validaArquivo(){
 
 	if(valido>0)
 		{
-		texto_alerta = "Arquivo Correto com "+contador/num_campos+" registros";
-		alert(texto_alerta);
 		document.formulario.registros.value = contador/num_campos;
 		document.formulario.campos.value = num_campos;
 		chama_suporte();
