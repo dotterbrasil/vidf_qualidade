@@ -108,7 +108,7 @@ if(1==1) {
 
 					//libera o lote da quarentena
 					if($natureza=="liberacao") {
-						rename($caminho.$anvisa."/q".$lote,"../".$anvisa."/".$lote);
+						rename($caminho.$anvisa."/q".$lote,$caminho.$anvisa."/".$lote);
 						exit("Operacao Efetuada!");
 						}
 					}
