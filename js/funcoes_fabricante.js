@@ -64,3 +64,10 @@ function envio(){
 		document.getElementById("texto").value = "";
 		document.formulario.fid.value = vid;
 }
+
+function fecha_janela(){
+
+document.getElementById('senha').style.display='none';
+document.getElementById('janela').style.display='none';
+
+}
